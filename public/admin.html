@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex,nofollow"><title>Corner – Administration</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><header class="top"><div class="wrap bar"><a class="logo" href="/">Corner <span class="mute" style="font-weight:500">· Administration</span></a><nav style="display:flex"><a href="/">Retour au site</a></nav></div></header>
+<main class="wrap" style="padding:32px 20px 64px">
+<div class="seg" role="group" aria-label="Section"><button type="button" data-tab="claims" aria-pressed="true">Comptes à vérifier</button><button type="button" data-tab="preds" aria-pressed="false">Pronostics</button></div>
+<p class="msg" id="msg" role="status"></p>
+<section id="t-claims"><h2>Demandes à vérifier</h2>
+<p class="lead">Pour chaque demande, ouvrez votre espace affilié chez le bookmaker et cherchez l’identifiant ci-dessous. Validez seulement s’il apparaît bien parmi les comptes créés avec votre code.</p>
+<div class="filters"><select id="st" aria-label="Statut"><option value="pending">En attente</option><option value="approved">Validées</option><option value="rejected">Refusées</option></select><button class="btn alt" id="rf" type="button">Actualiser</button></div>
+<div id="list" class="grid"></div></section>
+<section id="t-preds" hidden><h2>Publier un pronostic</h2><p class="lead">Une sélection par match. « Gratuit » est visible par tous, « Premium » seulement par les abonnés.</p>
+<form class="panel wide" id="pf" novalidate><div class="form2">
+<div><label for="lg">Championnat</label><input id="lg" placeholder="Ex. Ligue 1" maxlength="80"></div>
+<div><label for="ko">Date et heure du match</label><input id="ko" type="datetime-local"></div>
+<div><label for="hm">Équipe à domicile</label><input id="hm" maxlength="80"></div>
+<div><label for="aw">Équipe à l’extérieur</label><input id="aw" maxlength="80"></div>
+<div><label for="sl">Sélection</label><input id="sl" placeholder="Ex. Plus de 2,5 buts" maxlength="120"></div>
+<div><label for="od">Cote</label><input id="od" inputmode="decimal" placeholder="1,85"></div>
+<div><label for="cf">Confiance</label><select id="cf"><option value="1">1 sur 5</option><option value="2">2 sur 5</option><option value="3" selected>3 sur 5</option><option value="4">4 sur 5</option><option value="5">5 sur 5</option></select></div>
+<div><label for="tr">Accès</label><select id="tr"><option value="free">Gratuit</option><option value="premium">Premium</option></select></div></div>
+<label for="an">Analyse (le raisonnement)</label><textarea id="an" maxlength="2000"></textarea>
+<div class="cta-row" style="margin-top:18px"><button class="btn" type="button" id="pub">Publier maintenant</button><button class="btn alt" type="button" id="draft">Enregistrer en brouillon</button></div></form>
+<h2>Derniers pronostics</h2><p class="lead">Quand un match est terminé, enregistrez son résultat : il apparaît dans la page Résultats.</p><div id="plist" class="grid"></div></section>
+</main><script src="admin.js"></script></body></html>
